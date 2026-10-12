@@ -83,6 +83,19 @@ cargo clippy --all-targets --all-features -- -D warnings
 cargo test --all-features
 ```
 
+## Benchmark
+
+The manually triggered **NMDC small-test benchmark** workflow compares
+`megahit-rs` at k=31 against both single-k and default multi-k MEGAHIT 1.2.9.
+It performs three rotated replicates on one Linux runner and records wall time,
+peak memory, assembly statistics, deterministic output hashes, and paired-read
+mapping. See [`benchmarks/nmdc-smalltest`](benchmarks/nmdc-smalltest) for the
+protocol and pinned input checksums.
+
+This smoke benchmark has no reference truth and therefore cannot establish
+biological correctness. CAMI/reference-backed validation remains a release
+gate.
+
 ## Roadmap
 
 1. Streaming external-memory k-mer partitioning.
