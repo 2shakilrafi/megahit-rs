@@ -392,7 +392,9 @@ def main() -> int:
             "megahit_rs": subprocess.check_output([str(rust_bin), "--version"], text=True).strip(),
             "megahit": subprocess.check_output([str(megahit), "--version"], text=True, env=env).strip(),
             "minimap2": subprocess.check_output([str(minimap2), "--version"], text=True, env=env).strip(),
-            "samtools": subprocess.check_output([str(samtools), "--version"], text=True, env=env).splitlines()[0],
+            "samtools": subprocess.check_output(
+                [str(samtools), "--version"], encoding="utf-8", errors="replace", env=env
+            ).splitlines()[0],
         },
         "system": system_metadata(),
         "timings": measurements,
