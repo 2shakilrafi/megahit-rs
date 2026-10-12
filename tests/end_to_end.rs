@@ -7,14 +7,21 @@ use megahit_rs::{InputPaths, PipelineConfig, run_pipeline};
 use std::fs;
 use std::io::Write;
 use std::path::PathBuf;
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::{SystemTime, UNIX_EPOCH};
+
+static NEXT_TEMP_DIRECTORY: AtomicU64 = AtomicU64::new(0);
 
 fn temporary_directory() -> PathBuf {
     let nonce = SystemTime::now()
         .duration_since(UNIX_EPOCH)
         .unwrap()
         .as_nanos();
-    let path = std::env::temp_dir().join(format!("megahit-rs-test-{}-{nonce}", std::process::id()));
+    let sequence = NEXT_TEMP_DIRECTORY.fetch_add(1, Ordering::Relaxed);
+    let path = std::env::temp_dir().join(format!(
+        "megahit-rs-test-{}-{nonce}-{sequence}",
+        std::process::id()
+    ));
     fs::create_dir_all(&path).unwrap();
     path
 }
