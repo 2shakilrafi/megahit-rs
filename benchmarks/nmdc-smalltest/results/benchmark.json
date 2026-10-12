@@ -1,0 +1,393 @@
+{
+  "benchmark": {
+    "input": "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+    "input_sha256": "9cc9f1e2e09aed826efb31123efbff541c655e08aa0dc40621026f9bdcec8c42",
+    "read_pairs": 125000,
+    "read_records": 250000,
+    "read_bases": 37109226,
+    "read_length_min": 50,
+    "read_length_max": 150,
+    "read_length_median": 150.0,
+    "threads": 8,
+    "replicates": 3,
+    "minimum_contig_length": 200,
+    "minimum_kmer_count": 2
+  },
+  "versions": {
+    "megahit_rs": "megahit-rs 0.1.0",
+    "megahit": "MEGAHIT v1.2.9",
+    "minimap2": "2.26-r1175",
+    "samtools": "samtools 1.19.2"
+  },
+  "system": {
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "cpu_model": "AMD EPYC 9V45 96-Core Processor",
+    "logical_cpus": 4,
+    "memory_kib": 16373452,
+    "python": "3.12.3",
+    "github_run_id": "38193820760",
+    "github_sha": "59089d2ae7b48ef57ba3625c815135404cc5e363"
+  },
+  "timings": [
+    {
+      "wall_seconds": 29.9,
+      "user_seconds": 57.93,
+      "sys_seconds": 1.98,
+      "max_rss_bytes": 5851881472,
+      "assembler": "megahit-rs-k31",
+      "run": 1,
+      "started_unix": 1791770246.4664924,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/target/release/megahit-rs",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-k",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-rs-k31-run1/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-rs-k31-run1/assembly",
+      "fasta": "benchmark-work/results/megahit-rs-k31-run1/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 3.13,
+      "user_seconds": 10.38,
+      "sys_seconds": 0.19,
+      "max_rss_bytes": 294940672,
+      "assembler": "megahit-k31",
+      "run": 1,
+      "started_unix": 1791770276.3861246,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "--k-list",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-k31-run1/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-k31-run1/assembly",
+      "fasta": "benchmark-work/results/megahit-k31-run1/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 10.81,
+      "user_seconds": 36.5,
+      "sys_seconds": 0.51,
+      "max_rss_bytes": 332603392,
+      "assembler": "megahit-default",
+      "run": 1,
+      "started_unix": 1791770279.5255926,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-o",
+        "benchmark-work/results/megahit-default-run1/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-default-run1/assembly",
+      "fasta": "benchmark-work/results/megahit-default-run1/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 10.52,
+      "user_seconds": 35.58,
+      "sys_seconds": 0.44,
+      "max_rss_bytes": 332337152,
+      "assembler": "megahit-default",
+      "run": 2,
+      "started_unix": 1791770290.3431034,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-o",
+        "benchmark-work/results/megahit-default-run2/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-default-run2/assembly",
+      "fasta": "benchmark-work/results/megahit-default-run2/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 28.2,
+      "user_seconds": 55.14,
+      "sys_seconds": 1.96,
+      "max_rss_bytes": 5852971008,
+      "assembler": "megahit-rs-k31",
+      "run": 2,
+      "started_unix": 1791770300.8660111,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/target/release/megahit-rs",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-k",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-rs-k31-run2/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-rs-k31-run2/assembly",
+      "fasta": "benchmark-work/results/megahit-rs-k31-run2/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 2.79,
+      "user_seconds": 9.09,
+      "sys_seconds": 0.17,
+      "max_rss_bytes": 294879232,
+      "assembler": "megahit-k31",
+      "run": 2,
+      "started_unix": 1791770329.0679,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "--k-list",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-k31-run2/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-k31-run2/assembly",
+      "fasta": "benchmark-work/results/megahit-k31-run2/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 2.78,
+      "user_seconds": 9.1,
+      "sys_seconds": 0.17,
+      "max_rss_bytes": 294813696,
+      "assembler": "megahit-k31",
+      "run": 3,
+      "started_unix": 1791770331.8652823,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "--k-list",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-k31-run3/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-k31-run3/assembly",
+      "fasta": "benchmark-work/results/megahit-k31-run3/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 10.31,
+      "user_seconds": 34.89,
+      "sys_seconds": 0.46,
+      "max_rss_bytes": 332435456,
+      "assembler": "megahit-default",
+      "run": 3,
+      "started_unix": 1791770334.6526268,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/MEGAHIT-1.2.9-Linux-x86_64-static/bin/megahit",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-o",
+        "benchmark-work/results/megahit-default-run3/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-default-run3/assembly",
+      "fasta": "benchmark-work/results/megahit-default-run3/assembly/final.contigs.fa"
+    },
+    {
+      "wall_seconds": 28.13,
+      "user_seconds": 54.98,
+      "sys_seconds": 1.84,
+      "max_rss_bytes": 5806866432,
+      "assembler": "megahit-rs-k31",
+      "run": 3,
+      "started_unix": 1791770344.9726064,
+      "command": [
+        "/home/runner/work/megahit-rs/megahit-rs/target/release/megahit-rs",
+        "--12",
+        "/home/runner/work/megahit-rs/megahit-rs/benchmark-work/smalltest.int.fastq.gz",
+        "--min-count",
+        "2",
+        "--min-contig-len",
+        "200",
+        "-t",
+        "8",
+        "-k",
+        "31",
+        "-o",
+        "benchmark-work/results/megahit-rs-k31-run3/assembly"
+      ],
+      "output_dir": "benchmark-work/results/megahit-rs-k31-run3/assembly",
+      "fasta": "benchmark-work/results/megahit-rs-k31-run3/assembly/final.contigs.fa"
+    }
+  ],
+  "summary": {
+    "megahit-rs-k31": {
+      "runs": 3,
+      "median_wall_seconds": 28.2,
+      "wall_seconds": [
+        29.9,
+        28.2,
+        28.13
+      ],
+      "median_max_rss_bytes": 5851881472,
+      "max_rss_bytes": [
+        5851881472,
+        5852971008,
+        5806866432
+      ]
+    },
+    "megahit-k31": {
+      "runs": 3,
+      "median_wall_seconds": 2.79,
+      "wall_seconds": [
+        3.13,
+        2.79,
+        2.78
+      ],
+      "median_max_rss_bytes": 294879232,
+      "max_rss_bytes": [
+        294940672,
+        294879232,
+        294813696
+      ]
+    },
+    "megahit-default": {
+      "runs": 3,
+      "median_wall_seconds": 10.52,
+      "wall_seconds": [
+        10.81,
+        10.52,
+        10.31
+      ],
+      "median_max_rss_bytes": 332435456,
+      "max_rss_bytes": [
+        332603392,
+        332337152,
+        332435456
+      ]
+    }
+  },
+  "assembly_metrics": {
+    "megahit-rs-k31": {
+      "sha256": "48230f5d33744d2429236507b80b8a2488701e53e139017547ee7fe08313036f",
+      "contigs": 19,
+      "total_bp": 4247,
+      "largest_bp": 256,
+      "mean_bp": 223.52631578947367,
+      "n50_bp": 225,
+      "l50": 9,
+      "n90_bp": 203,
+      "l90": 17,
+      "contigs_ge_500": 0,
+      "contigs_ge_1000": 0,
+      "contigs_ge_5000": 0,
+      "contigs_ge_10000": 0,
+      "gc_percent": 70.94419590299034,
+      "ambiguous_bases": 0
+    },
+    "megahit-k31": {
+      "sha256": "891c7f2172918ba608c2be2063cd9d01992561321d0b90ce1a3d5b38220f3b3f",
+      "contigs": 192,
+      "total_bp": 48683,
+      "largest_bp": 579,
+      "mean_bp": 253.55729166666666,
+      "n50_bp": 246,
+      "l50": 82,
+      "n90_bp": 208,
+      "l90": 169,
+      "contigs_ge_500": 1,
+      "contigs_ge_1000": 0,
+      "contigs_ge_5000": 0,
+      "contigs_ge_10000": 0,
+      "gc_percent": 68.46126984779082,
+      "ambiguous_bases": 0
+    },
+    "megahit-default": {
+      "sha256": "725eda2b3a8cca9f8c58c4f912d84498b9870862dcf578d18f0b24866f76ec3e",
+      "contigs": 216,
+      "total_bp": 84754,
+      "largest_bp": 1879,
+      "mean_bp": 392.3796296296296,
+      "n50_bp": 372,
+      "l50": 89,
+      "n90_bp": 313,
+      "l90": 189,
+      "contigs_ge_500": 22,
+      "contigs_ge_1000": 2,
+      "contigs_ge_5000": 0,
+      "contigs_ge_10000": 0,
+      "gc_percent": 68.70826155697667,
+      "ambiguous_bases": 0
+    }
+  },
+  "read_mapping": {
+    "megahit-rs-k31": {
+      "primary_reads": 250000,
+      "primary_mapped": 100,
+      "primary_mapped_percent": 0.04,
+      "paired_reads": 250000,
+      "properly_paired": 30,
+      "properly_paired_percent": 0.012
+    },
+    "megahit-k31": {
+      "primary_reads": 250000,
+      "primary_mapped": 1058,
+      "primary_mapped_percent": 0.4232,
+      "paired_reads": 250000,
+      "properly_paired": 392,
+      "properly_paired_percent": 0.1568
+    },
+    "megahit-default": {
+      "primary_reads": 250000,
+      "primary_mapped": 1373,
+      "primary_mapped_percent": 0.5492,
+      "paired_reads": 250000,
+      "properly_paired": 522,
+      "properly_paired_percent": 0.2088
+    }
+  },
+  "byte_deterministic_across_replicates": {
+    "megahit-rs-k31": true,
+    "megahit-k31": false,
+    "megahit-default": false
+  }
+}

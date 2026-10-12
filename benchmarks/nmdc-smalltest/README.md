@@ -1,8 +1,9 @@
 # NMDC small-test benchmark
 
 This benchmark compares `megahit-rs` with MEGAHIT 1.2.9 using the 22.6 MB
-interleaved Illumina test input published by the NMDC metagenome assembly
-workflow. It runs three configurations on the same machine:
+[interleaved Illumina test input](https://portal.nersc.gov/project/m3408/test_data/smalltest.int.fastq.gz)
+published by the [NMDC metagenome assembly workflow](https://github.com/microbiomedata/metaAssembly).
+It runs three configurations on the same machine:
 
 1. `megahit-rs` at fixed k=31.
 2. MEGAHIT constrained to k=31.
@@ -22,3 +23,5 @@ This is a fast development benchmark. The NMDC input does not include a
 gold-standard reference, so the results cannot establish assembly correctness.
 A truth-backed CAMI or defined mock-community benchmark remains a separate
 release gate.
+
+The latest measured report and its raw JSON are in [`results`](results).

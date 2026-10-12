@@ -38,6 +38,12 @@ def main() -> int:
     mapping = data["read_mapping"]
     system = data["system"]
     versions = data["versions"]
+    run_url = None
+    if system.get("github_run_id"):
+        run_url = (
+            "https://github.com/2shakilrafi/megahit-rs/actions/runs/"
+            + system["github_run_id"]
+        )
 
     lines = [
         "# NMDC small-test benchmark",
@@ -48,14 +54,17 @@ def main() -> int:
         "",
         "## Input and protocol",
         "",
-        f"- Input: NMDC/JGI `smalltest.int.fastq.gz` ({benchmark['read_pairs']:,} read pairs; "
-        f"{benchmark['read_bases']:,} bases)",
+        f"- Input: [NMDC/JGI `smalltest.int.fastq.gz`](https://portal.nersc.gov/project/m3408/test_data/smalltest.int.fastq.gz) "
+        f"({benchmark['read_pairs']:,} read pairs; {benchmark['read_bases']:,} bases)",
         f"- SHA-256: `{benchmark['input_sha256']}`",
         f"- Replicates: {benchmark['replicates']} per configuration; reported time and memory are medians",
         f"- Threads: {benchmark['threads']}; minimum k-mer count: {benchmark['minimum_kmer_count']}; "
         f"minimum contig: {benchmark['minimum_contig_length']} bp",
         "- Configurations: fixed k=31 for both assemblers, plus MEGAHIT's stock multi-k defaults",
         "- Input was decompressed once before timed runs; run order was rotated between replicates",
+        f"- Evidence: [GitHub Actions run {system['github_run_id']}]({run_url}) at commit `{system['github_sha']}`"
+        if run_url
+        else "- Evidence: local run",
         "",
         "## Results",
         "",
