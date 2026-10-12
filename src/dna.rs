@@ -214,11 +214,9 @@ mod tests {
         count_sequence_edges(b"AACGTNACGT", 3, &mut counts);
         // ACGT occurs once on each side of N, so each strand-specific edge has
         // coverage two after reverse-complement normalization.
-        let edge_word = [b'A', b'C', b'G', b'T']
-            .into_iter()
-            .fold(0_u128, |word, base| {
-                (word << 2) | u128::from(base_bits(base).unwrap())
-            });
+        let edge_word = b"ACGT".iter().copied().fold(0_u128, |word, base| {
+            (word << 2) | u128::from(base_bits(base).unwrap())
+        });
         let mask = mask_for_bases(3);
         let edge = EdgeKey {
             from: edge_word >> 2,
