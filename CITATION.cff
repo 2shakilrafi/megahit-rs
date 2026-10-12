@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use megahit-rs, cite the archived release and the original MEGAHIT algorithm paper."
+title: "megahit-rs: an experimental fixed-k metagenome assembler in Rust"
+type: software
+authors:
+  - name: "megahit-rs contributors"
+version: 0.1.0
+date-released: 2026-10-11
+license: GPL-3.0-or-later
+repository-code: "https://github.com/2shakilrafi/megahit-rs"
+preferred-citation:
+  type: article
+  title: "MEGAHIT: an ultra-fast single-node solution for large and complex metagenomics assembly via succinct de Bruijn graph"
+  authors:
+    - family-names: Li
+      given-names: Dinghua
+    - family-names: Liu
+      given-names: Chi-Man
+    - family-names: Luo
+      given-names: Ruibang
+    - family-names: Sadakane
+      given-names: Kunihiko
+    - family-names: Lam
+      given-names: Tak-Wah
+  journal: Bioinformatics
+  volume: 31
+  issue: 10
+  start: 1674
+  end: 1676
+  year: 2015
+  doi: 10.1093/bioinformatics/btv033
+
