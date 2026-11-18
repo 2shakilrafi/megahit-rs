@@ -4,9 +4,8 @@
 
 `megahit-rs` is an experimental, deterministic metagenome assembler written in
 Rust. Version 0.1 implements a bounded-memory input pipeline and a packed,
-fixed-*k* compacted de Bruijn graph. It is a working foundation for a modern
-MEGAHIT-compatible assembler; it is **not yet a drop-in scientific replacement
-for MEGAHIT**.
+fixed-*k* compacted de Bruijn graph. It is a starting point for a MEGAHIT-compatible assembler and is **not yet a
+drop-in replacement for MEGAHIT**.
 
 ## What works in 0.1
 
